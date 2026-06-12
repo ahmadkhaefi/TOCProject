@@ -6,8 +6,6 @@ void configure_dfa(std::istream& in, DFA& dfa) {
     std::string line;
 
     // STATES
-    std::cout << "STATES: ";
-
     if (std::getline(in, line)) {
         std::stringstream ss(line);
         std::string state;
@@ -16,8 +14,6 @@ void configure_dfa(std::istream& in, DFA& dfa) {
     }
 
     // ALPHABET
-    std::cout << "ALPHABET: ";
-
     if (std::getline(in, line)) {
         std::stringstream ss(line);
         std::string symbol;
@@ -26,8 +22,6 @@ void configure_dfa(std::istream& in, DFA& dfa) {
     }
 
     // START STATE
-    std::cout << "START STATE: ";
-
     if (std::getline(in, line)) {
         std::stringstream ss(line);
         std::string start;
@@ -38,8 +32,6 @@ void configure_dfa(std::istream& in, DFA& dfa) {
     }
 
     // FINAL STATES
-    std::cout << "FINAL STATES: ";
-
     if (std::getline(in, line)) {
         std::stringstream ss(line);
         std::string state;
@@ -48,8 +40,6 @@ void configure_dfa(std::istream& in, DFA& dfa) {
     }
 
     // TRANSITIONS
-    std::cout << "NUMBER OF TRANSITIONS: ";
-
     int number_of_transitions;
 
     if (std::getline(in, line)) {
@@ -57,12 +47,6 @@ void configure_dfa(std::istream& in, DFA& dfa) {
 
         ss >> number_of_transitions;
     }
-
-    // int maximum_number_of_transitions = dfa.size() * alphabet.size();
-
-    // if (number_of_transitions > maximum_number_of_transitions) {
-    //     throw std::runtime_error(std::format("Number of transitions must not exceed {}.", maximum_number_of_transitions));
-    // }
 
     for (size_t i = 0; i < number_of_transitions; i++) {
         if (std::getline(in, line)) {
@@ -81,8 +65,6 @@ void simulate_strings(std::istream& in, DFA& dfa) {
     std::string line;
 
     // STRINGS
-    std::cout << "NUMBER OF STRINGS: ";
-
     int number_of_strings;
 
     if (std::getline(in, line)) {
