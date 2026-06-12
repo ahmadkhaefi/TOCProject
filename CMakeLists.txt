@@ -8,4 +8,5 @@ add_executable(
     main.c++
     dfa.c++
     input.c++
+    dpda.c++
 )
