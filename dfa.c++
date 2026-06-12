@@ -220,7 +220,9 @@ void DFA::simulate(const std::string& input) {
 
         std::cout << std::format("Move from {} to {} via '{}'.\n", current.name, it->second.name, symbol);
 
-        if (it->second == State{"DEAD"}) {
+        auto trap_states = find_trap_states();
+
+        if (std::find(trap_states.begin(), trap_states.end(), it->second) != trap_states.end()) {
             std::cout << "Execution halted early.\n";
             std::cout << "Result: Rejected.\n";
             return;
